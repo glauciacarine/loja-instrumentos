@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Instrumento cadastrado</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Cadastro realizado!</h1>
+
+  <div class="ok">
+    <p>O instrumento foi gravado com sucesso no MongoDB:</p>
+    <ul>
+      <li><strong>Nome:</strong> <%= instrumento.nome %></li>
+      <li><strong>Fabricante:</strong> <%= instrumento.fabricante %></li>
+      <li><strong>Preço:</strong> R$ <%= instrumento.preco.toFixed(2).replace('.', ',') %></li>
+      <li><strong>Tipo:</strong> <%= instrumento.tipo %></li>
+    </ul>
+  </div>
+
+  <p class="links">
+    <a href="/instrumento/add">Cadastrar outro instrumento</a>
+    <a href="/instrumento/lst">Voltar à listagem</a>
+  </p>
+</body>
+</html>

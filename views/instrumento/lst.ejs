@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Instrumentos cadastrados</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Instrumentos cadastrados</h1>
+
+  <nav>
+    <a href="/instrumento/add">Cadastrar novo instrumento</a>
+  </nav>
+
+  <% if (instrumentos.length === 0) { %>
+    <p>Nenhum instrumento cadastrado ainda.</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Fabricante</th>
+          <th>Preço</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% instrumentos.forEach(function (inst) { %>
+          <tr>
+            <td><%= inst.nome %></td>
+            <td><%= inst.fabricante %></td>
+            <td>R$ <%= inst.preco.toFixed(2).replace('.', ',') %></td>
+            <td><%= inst.tipo %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <p>Total: <%= instrumentos.length %> instrumento(s)</p>
+  <% } %>
+</body>
+</html>
